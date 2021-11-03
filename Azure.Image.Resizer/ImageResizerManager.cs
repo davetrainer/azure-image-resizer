@@ -8,8 +8,7 @@ namespace Azure.Image.Resizer
 
         public void ResizeImage(Stream inputStream, Stream outputStream)
         {
-            var image = new MagickImage(inputStream);
-
+            using MagickImage? image = new(inputStream);
             image.Resize(100, 100);
             image.Write(outputStream);
         }
