@@ -1,13 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Azure.Image.Resizer
+﻿namespace Azure.Image.Resizer
 {
     public interface IImageResizerManager
     {
-        public void ResizeImage();
+        public void ResizeImage(Stream inputStream, Stream outputStream);
     }
 }

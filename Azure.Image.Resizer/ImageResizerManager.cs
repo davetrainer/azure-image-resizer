@@ -1,12 +1,17 @@
-﻿namespace Azure.Image.Resizer
+﻿using ImageMagick;
+
+namespace Azure.Image.Resizer
 {
     public class ImageResizerManager : IImageResizerManager
     {
         public ImageResizerManager() { }
 
-        public void ResizeImage()
+        public void ResizeImage(Stream inputStream, Stream outputStream)
         {
-            throw new NotImplementedException();
+            var image = new MagickImage(inputStream);
+
+            image.Resize(100, 100);
+            image.Write(outputStream);
         }
     }
 }
